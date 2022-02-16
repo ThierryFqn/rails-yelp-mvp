@@ -1,0 +1,27 @@
+ <div class="container">
+  <div class="wrapper">
+    <h1 class='text-center mt-3'> <%= @restaurant.name %> </h1>
+      <p>
+        <strong>Address:</strong>
+        <%= @restaurant.address %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= @restaurant.category %>
+      </p>
+
+      <p>
+        <strong>Reviews:</strong>
+        <ul>
+          <% @restaurant.reviews.each do |review| %>
+          <li>
+            <%= review.rating %>/5 | <%= review.content %>
+          </li>
+          <% end %>
+          </ul>
+      </p>
+
+    <button type="button" class="btn"><%= link_to 'Back', restaurants_path %></button>
+  </div>
+</div>
